@@ -1,0 +1,19 @@
+:root { color-scheme: dark; --bg:#0f1419; --panel:#1a222c; --borde:#2b3745; --acento:#d4a017; }
+body { margin:0; font-family:"Segoe UI",Arial,sans-serif; background:var(--bg); color:#e6edf3; }
+main { max-width:1000px; margin:0 auto; padding:1rem; }
+h1 { font-size:1.4rem; color:var(--acento); }
+section { background:var(--panel); border:1px solid var(--borde); border-radius:8px; padding:1rem; margin:1rem 0; }
+h2 { margin-top:0; font-size:1.1rem; }
+button { background:var(--acento); color:#000; border:0; border-radius:4px; padding:.4rem .8rem; font-weight:600; cursor:pointer; }
+button.activo { outline:2px solid #fff; }
+input, select { background:var(--bg); color:inherit; border:1px solid var(--borde); border-radius:4px; padding:.4rem; }
+.filtros, .formulario { display:flex; flex-wrap:wrap; gap:.5rem; }
+.rejilla { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.75rem; }
+.tarjeta { border:1px solid var(--borde); border-radius:6px; padding:.75rem; cursor:pointer; transition:transform .15s, border-color .15s; }
+.tarjeta.inspeccion { transform:translateY(-4px); border-color:var(--acento); box-shadow:0 4px 12px rgba(0,0,0,.5); }
+.tarjeta.seleccionada { background:rgba(212,160,23,.15); }
+.tarjeta h3 { margin:0 0 .25rem; font-size:1rem; }
+.sku { color:#8b98a5; margin:0; font-size:.85rem; }
+.detalle { color:var(--acento); margin:.5rem 0 0; }
+.error { color:#ff7b72; }
+.log { color:#8b98a5; font-size:.85rem; }

@@ -1,0 +1,17 @@
+{
+  "name": "gun-service-api",
+  "version": "1.0.0",
+  "description": "API REST de inventario de armamento escénico - GUN SERVICE INTERNATIONAL S.A.S.",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": { "node": ">=20.6" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "test": "node --env-file-if-exists=.env --test \"tests/*.test.js\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}

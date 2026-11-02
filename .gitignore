@@ -35,3 +35,8 @@ desktop.ini
 *.tmp
 *.swp
 *~
+
+# --- Servidor web local (script run-web.ps1) ---
+tools/
+node_modules/
+dist/

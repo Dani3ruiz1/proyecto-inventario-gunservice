@@ -1,0 +1,18 @@
+==============================================================
+  GUN SERVICE INTERNATIONAL - Suite de pruebas: Módulo Inventario
+==============================================================
+[PASS] CP-01 | Inserción válida de activo táctico (61 ms)
+       > Persistido con id 17
+[PASS] CP-02 | SKU duplicado se rechaza sin romper el sistema (593 ms)
+       > Mensaje: El SKU TEST-QA-001 ya está registrado.
+       > MySQL también rechazó el duplicado; el sistema sigue operativo
+[PASS] CP-03 | Existencia negativa se rechaza con mensaje claro (2 ms)
+       > Mensaje: La existencia no puede ser negativa (valor recibido: -4).
+[PASS] CP-04 | Modificación de existencias y tarifa (10 ms)
+       > Existencia 10 -> 25, tarifa 170.000 -> 185.000
+[PASS] CP-05 | Eliminación y verificación de no existencia (5 ms)
+       > SKU TEST-QA-001 eliminado y verificado
+--------------------------------------------------------------
+RESUMEN: 5 casos | 5 PASS | 0 FAIL | tiempo total 671 ms
+RESULTADO: SUITE APROBADA
+==============================================================
