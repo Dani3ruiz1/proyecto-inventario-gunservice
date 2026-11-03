@@ -1,0 +1,82 @@
+/* Identidad Gun Service: fondo #121418, advertencia #f39c12, tarjetas contrastadas. */
+:root {
+  color-scheme: dark;
+  --fondo: #121418; --panel: #1b1f26; --panel2: #232932; --borde: #323a46;
+  --adv: #f39c12; --texto: #eceff1; --suave: #8a94a3;
+  --ok: #2ecc71; --mal: #e74c3c; --info: #3498db;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); color: var(--texto); font-family: "Segoe UI", Arial, sans-serif; line-height: 1.45; }
+h1 { font-size: 1.35rem; margin: 0 0 1rem; letter-spacing: .03em; }
+h2 { font-size: 1rem; color: var(--adv); margin: 1.75rem 0 .75rem; text-transform: uppercase; letter-spacing: .08em; }
+button, input, select { font: inherit; color: inherit; }
+button { background: var(--panel2); border: 1px solid var(--borde); border-radius: 4px; padding: .45rem .9rem; cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--adv); }
+button:disabled { opacity: .4; cursor: not-allowed; }
+button.primario { background: var(--adv); border-color: var(--adv); color: #111; font-weight: 700; }
+input, select { background: var(--fondo); border: 1px solid var(--borde); border-radius: 4px; padding: .5rem .6rem; width: 100%; }
+input:focus, select:focus, button:focus-visible { outline: 2px solid var(--adv); }
+
+/* Navbar y pestañas */
+.gs-navbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 1.25rem; background: var(--panel); border-bottom: 3px solid var(--adv); }
+.gs-logo { display: flex; align-items: center; gap: .7rem; color: var(--adv); font-weight: 800; letter-spacing: .1em; }
+.gs-logo small { display: block; font-size: .6rem; color: var(--suave); letter-spacing: .12em; font-weight: 600; }
+.gs-resumen { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; color: var(--suave); font-size: .85rem; }
+.gs-resumen b { color: var(--texto); font-size: 1.1rem; }
+.gs-tabs { display: flex; gap: .25rem; padding: 0 1.25rem; background: var(--panel); border-bottom: 1px solid var(--borde); overflow-x: auto; }
+.gs-tabs button { background: transparent; border: 0; border-bottom: 3px solid transparent; border-radius: 0; padding: .8rem 1rem; white-space: nowrap; color: var(--suave); }
+.gs-tabs button.activa { color: var(--adv); border-bottom-color: var(--adv); }
+.gs-badge { background: var(--mal); color: #fff; border-radius: 99px; padding: 0 .45rem; font-size: .7rem; margin-left: .4rem; }
+
+/* Contenido */
+.gs-main { max-width: 1150px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+.gs-titulo { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.gs-titulo h1 { margin: 0; }
+.gs-filtro { display: grid; grid-template-columns: 2fr 1fr auto; gap: .75rem; align-items: center; margin-bottom: 1.25rem; }
+.gs-contador { color: var(--suave); font-size: .85rem; white-space: nowrap; }
+.gs-vacio { color: var(--suave); text-align: center; padding: 2rem; border: 1px dashed var(--borde); border-radius: 8px; }
+.gs-aviso { padding: .65rem 1rem; margin-bottom: 1rem; border-radius: 6px; background: rgba(243,156,18,.15); border: 1px solid var(--adv); }
+
+/* Tarjetas */
+.gs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.gs-card { background: var(--panel); border: 1px solid var(--borde); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
+.gs-card:hover { transform: translateY(-3px); border-color: var(--adv); }
+.gs-card__img { position: relative; height: 110px; display: grid; place-items: center; background: linear-gradient(135deg, #262c36, #14171c); color: #5b6676; }
+.gs-card__img svg { width: 120px; }
+.gs-etiqueta { position: absolute; top: .5rem; left: .5rem; background: var(--fondo); border: 1px solid var(--borde); border-radius: 4px; font-size: .7rem; padding: .1rem .5rem; text-transform: uppercase; letter-spacing: .08em; }
+.gs-card__cuerpo { padding: .8rem 1rem; flex: 1; }
+.gs-card__cuerpo p { margin: .3rem 0; }
+.gs-card h3 { margin: .2rem 0 .5rem; font-size: 1rem; }
+.gs-sku { font-family: Consolas, monospace; font-size: .8rem; color: var(--adv); }
+.gs-datos { font-size: .85rem; color: var(--suave); }
+.gs-tarifa { font-size: 1.15rem; font-weight: 700; }
+.gs-tarifa small { font-weight: 400; color: var(--suave); }
+.gs-card__acciones { display: flex; gap: .5rem; padding: .75rem 1rem; border-top: 1px solid var(--borde); }
+.gs-card__acciones button { flex: 1; }
+.gs-estado { display: inline-block; font-size: .78rem; padding: .1rem .6rem; border-radius: 99px; border: 1px solid; }
+.gs-estado.ok { color: var(--ok); } .gs-estado.set { color: var(--adv); } .gs-estado.rev { color: var(--info); }
+
+/* Formularios y tablas */
+.gs-form-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; align-items: start; background: var(--panel); border: 1px solid var(--borde); border-radius: 8px; padding: 1rem; }
+.gs-form-panel button { align-self: end; }
+label { display: grid; gap: .25rem; font-size: .8rem; color: var(--suave); }
+label.invalido input { border-color: var(--mal); }
+.gs-error { color: var(--mal); font-size: .75rem; }
+.gs-tabla-wrap { overflow-x: auto; }
+.gs-tabla { width: 100%; border-collapse: collapse; min-width: 640px; }
+.gs-tabla th, .gs-tabla td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid var(--borde); }
+.gs-tabla th { color: var(--adv); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; }
+.gs-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.gs-lista li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--borde); border-radius: 6px; padding: .7rem 1rem; }
+
+/* Modal */
+.gs-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.72); display: grid; place-items: center; padding: 1rem; z-index: 20; }
+.gs-modal { background: var(--panel); border: 1px solid var(--borde); border-top: 3px solid var(--adv); border-radius: 8px; padding: 1.25rem; width: 100%; max-width: 520px; max-height: 92vh; overflow-y: auto; display: grid; gap: .8rem; }
+.gs-modal h2 { margin: 0; }
+.gs-modal input[readonly] { opacity: .6; }
+.gs-fila { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.gs-modal__acciones { display: flex; justify-content: flex-end; gap: .6rem; }
+
+@media (max-width: 640px) {
+  .gs-filtro, .gs-fila { grid-template-columns: 1fr; }
+}
